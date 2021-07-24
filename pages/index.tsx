@@ -18,7 +18,7 @@ export default function Home() {
         <p className={styles.description}>Fullstack developer</p>
         <div className={styles.grid}>
           <div className={styles.card}>
-            <strong>Frontend</strong>
+            <h2>Frontend</h2>
             <ul>
               <li>React</li>
               <li>Angular</li>
@@ -26,7 +26,7 @@ export default function Home() {
             </ul>
           </div>
           <div className={styles.card}>
-            <strong>Backend</strong>
+            <h2>Backend</h2>
             <ul>
               <li>C#</li>
               <li>Python</li>
@@ -34,7 +34,7 @@ export default function Home() {
             </ul>
           </div>
           <div className={styles.card}>
-            <strong>Cloud</strong>
+            <h2>Cloud</h2>
             <ul>
               <li>Sharepoint</li>
               <li>Azure</li>
@@ -42,7 +42,7 @@ export default function Home() {
             </ul>
           </div>
           <div className={styles.card}>
-            <strong>Tools</strong>
+            <h2>Tools</h2>
             <ul>
               <li>Docker</li>
               <li>VSCode</li>
