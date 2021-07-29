@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import ScrollableSection from "../components/ScrollableSection";
 import styles from "../styles/Home.module.css";
 import githublink from "../public/github.png";
+import profilePicture from "../public/profile.jpeg";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,47 +13,63 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Kristoffer Kirkerud</h1>
-
-        <p className={styles.description}>Fullstack developer</p>
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h2>Frontend</h2>
-            <ul>
-              <li>React</li>
-              <li>Angular</li>
-              <li>Vue</li>
-            </ul>
-          </div>
-          <div className={styles.card}>
-            <h2>Backend</h2>
-            <ul>
-              <li>C#</li>
-              <li>Python</li>
-              <li>Java</li>
-            </ul>
-          </div>
-          <div className={styles.card}>
-            <h2>Cloud</h2>
-            <ul>
-              <li>Sharepoint</li>
-              <li>Azure</li>
-              <li>Google Domains</li>
-            </ul>
-          </div>
-          <div className={styles.card}>
-            <h2>Tools</h2>
-            <ul>
-              <li>Docker</li>
-              <li>VSCode</li>
-              <li>Photoshop</li>
-            </ul>
+        <div className={styles.section}>
+          <h1 className={styles.title}>Kristoffer Kirkerud</h1>
+          <h3>Lorem ipsum</h3>
+          <Image
+            className={styles.profile}
+            src={profilePicture}
+            alt="profilePicture"
+            height={500}
+            width={500}
+          />
+          <p>Lorem ipsum some text here</p>
+        </div>
+        <div className={styles.section}>
+          <h1>Skillsets</h1>
+          <div className={styles.grid}>
+            <div className={styles.card}>
+              <h2>Frontend</h2>
+              <ul>
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue</li>
+              </ul>
+            </div>
+            <div className={styles.card}>
+              <h2>Backend</h2>
+              <ul>
+                <li>C#</li>
+                <li>Python</li>
+                <li>Java</li>
+              </ul>
+            </div>
+            <div className={styles.card}>
+              <h2>Cloud</h2>
+              <ul>
+                <li>Sharepoint</li>
+                <li>Azure</li>
+                <li>Google Domains</li>
+              </ul>
+            </div>
+            <div className={styles.card}>
+              <h2>Tools</h2>
+              <ul>
+                <li>Docker</li>
+                <li>VSCode</li>
+                <li>Photoshop</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <div className={styles.section}></div>
       </main>
-
       <footer className={styles.footer}>
-        <a href="https://github.com/Kristofferkirk">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/Kristofferkirk"
+        >
           <Image width={50} height={50} alt="github" src={githublink} />
         </a>
       </footer>
