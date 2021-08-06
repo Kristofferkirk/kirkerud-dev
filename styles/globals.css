@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -8,9 +12,17 @@ body {
     rgba(148, 187, 233, 1) 100%
   );
   margin: 0;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
   scroll-snap-type: y mandatory;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+body ::-webkit-scrollbar {
+  display: none;
+}
+html::-webkit-scrollbar {
+  width: 0px; /* For Chrome, Safari, and Opera */
 }
 
 a {
@@ -20,4 +32,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#intro {
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+}
+
+#skills {
+  background-color: #394452;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 }

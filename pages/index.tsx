@@ -3,6 +3,43 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import githublink from "../public/github.png";
 import profilePicture from "../public/profile.jpeg";
+import React from "react";
+
+const SkillProgress = ({
+  title,
+  progress,
+}: {
+  title: string;
+  progress: 1 | 2 | 3 | 4 | 5;
+}) => {
+  const color = progress > 3 ? "green" : "yellow";
+  return (
+    <>
+      <div className="relative pt-1">
+        <div className="flex mb-2 items-center justify-between">
+          <div>
+            <span
+              className={`text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-amber-600 bg-amber-200`}
+            >
+              {title}
+            </span>
+          </div>
+          <div className="text-right">
+            <span className="text-xs font-semibold inline-block text-amber-600">
+              {progress}
+            </span>
+          </div>
+        </div>
+        <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-amber-200">
+          <div
+            style={{ width: `${progress + 10 * 3}%` }}
+            className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-${color}-500`}
+          ></div>
+        </div>
+      </div>
+    </>
+  );
+};
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -12,53 +49,51 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <h1 className={styles.title}>Kirkerud.dev</h1>
       <main className={styles.main}>
-        <div className={styles.section}>
-          <h1 className={styles.title}>Kristoffer Kirkerud</h1>
-          <h3>Lorem ipsum</h3>
-          <Image
-            className={styles.profile}
-            src={profilePicture}
-            alt="profilePicture"
-            height={500}
-            width={500}
-          />
-          <p>Lorem ipsum some text here</p>
+        <div id="intro" className={styles.section}>
+          <div className={styles.grid}>
+            <div className={styles.glassCard}>
+              <Image
+                src={profilePicture}
+                width={300}
+                height={300}
+                alt="profile"
+              />
+
+              <p className={styles.description}>
+                My fondness of computers and everything tech related started
+                from an early age, from the moment i picked up Super Mario Bros
+                on the Gameboy i knew i wanted to work with tech.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className={styles.section}>
+        <div id="skills" className={styles.section}>
           <h1>Skillsets</h1>
           <div className={styles.grid}>
             <div className={styles.card}>
               <h2>Frontend</h2>
-              <ul>
-                <li>React</li>
-                <li>Angular</li>
-                <li>Vue</li>
-              </ul>
+              <SkillProgress title="React.js" progress={4} />
+              <SkillProgress title="HTML" progress={4} />
             </div>
             <div className={styles.card}>
               <h2>Backend</h2>
-              <ul>
-                <li>C#</li>
-                <li>Python</li>
-                <li>Java</li>
-              </ul>
+              <SkillProgress title="C#" progress={3} />
+              <SkillProgress title="Python" progress={2} />
+              <SkillProgress title="Java" progress={2} />
             </div>
             <div className={styles.card}>
               <h2>Cloud</h2>
-              <ul>
-                <li>Sharepoint</li>
-                <li>Azure</li>
-                <li>Google Domains</li>
-              </ul>
+              <SkillProgress title="Sharepoint" progress={3} />
+              <SkillProgress title="Azure" progress={3} />
+              <SkillProgress title="Google Domains" progress={3} />
             </div>
             <div className={styles.card}>
               <h2>Tools</h2>
-              <ul>
-                <li>Docker</li>
-                <li>VSCode</li>
-                <li>Photoshop</li>
-              </ul>
+              <SkillProgress title="Docker" progress={4} />
+              <SkillProgress title="VSCode" progress={5} />
+              <SkillProgress title="Photoshop" progress={2} />
             </div>
           </div>
         </div>
