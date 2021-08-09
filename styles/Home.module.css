@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Rock+Salt&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@700&family=Poppins&display=swap");
 .container {
   min-height: 100vh;
   display: flex;
@@ -57,6 +57,12 @@
   z-index: 9999;
 }
 
+.georamaTitle {
+  font-family: "Georama", sans-serif;
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px black;
+}
+
 .title,
 .description {
   text-align: left;
@@ -90,8 +96,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   max-width: 800px;
+}
+.groupedGrid > .glassCard {
+  max-width: 100%;
+  min-height: 500px;
+  width: 30vw;
+  margin: 10px;
+}
+.employment {
+  height: 100px;
 }
 
 .gridFull {
@@ -133,15 +147,6 @@
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
   animation-name: bumpingArrow;
-}
-
-@keyframes bumpingArrow {
-  from {
-    padding-top: 0px;
-  }
-  to {
-    padding-top: 50px;
-  }
 }
 
 .card {
@@ -192,7 +197,7 @@
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   scroll-snap-align: start;
   animation: fadeIn 5s;
@@ -208,7 +213,12 @@
     flex-direction: column;
   }
   .groupedGrid {
-    margin-top: 200px;
+    flex-wrap: wrap;
+    width: 300px;
+    min-height: 300px;
+
+    width: 100%;
+    margin: 10px;
   }
   .title {
     font-size: 1.5rem;
@@ -218,10 +228,14 @@
     padding: 1rem;
   }
   .glassCard {
-    width: 90%;
+    width: 80% !important;
     margin-top: 2rem;
     min-height: 0%;
     overflow-y: scroll;
+  }
+  .georamaTitle {
+    font-size: 2rem;
+    margin-top: 35px;
   }
 }
 
@@ -267,5 +281,14 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes bumpingArrow {
+  from {
+    padding-top: 0px;
+  }
+  to {
+    padding-top: 50px;
   }
 }

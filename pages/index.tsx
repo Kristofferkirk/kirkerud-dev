@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -46,31 +47,43 @@ export default function Home() {
           </div>
         </div>
         <div id="skills" className={styles.section}>
-          <div className="justify-center text-white font-bold">
-            <h1>Skillsets</h1>
+          <div className="justify-top text-white font-bold">
+            <h1 className={styles.georamaTitle}>Skillsets & Experience</h1>
           </div>
           <div className={styles.groupedGrid}>
             <div className={styles.glassCard}>
-              <h2>Frontend</h2>
+              <h2 className="font-bold text-lg text-center">Frontend</h2>
               <SkillProgressBar title="React.js" progress={4} />
+              <SkillProgressBar title="Javascript" progress={4} />
               <SkillProgressBar title="HTML" progress={4} />
+              <SkillProgressBar title="CSS" progress={3} />
+              <SkillProgressBar title="Angular 4" progress={2} />
+              <SkillProgressBar title="Vue" progress={2} />
             </div>
             <div className={styles.glassCard}>
-              <h2>Backend</h2>
+              <h2 className="font-bold text-lg text-center">Backend</h2>
               <SkillProgressBar title="C#" progress={3} />
-              <SkillProgressBar title="Python" progress={2} />
+              <SkillProgressBar title="Python" progress={3} />
+              <SkillProgressBar title="Node.js" progress={3} />
               <SkillProgressBar title="Java" progress={2} />
             </div>
             <div className={styles.glassCard}>
-              <h2>Cloud</h2>
+              <h2 className="font-bold text-lg text-center">Cloud</h2>
+              <SkillProgressBar title="Azure Devops" progress={4} />
+              <SkillProgressBar title="Application Insights" progress={3} />
+              <SkillProgressBar title="Azure Pipelines" progress={3} />
               <SkillProgressBar title="Sharepoint" progress={3} />
               <SkillProgressBar title="Azure" progress={3} />
               <SkillProgressBar title="Google Domains" progress={3} />
             </div>
             <div className={styles.glassCard}>
-              <h2>Tools</h2>
-              <SkillProgressBar title="Docker" progress={4} />
+              <h2 className="font-bold text-lg text-center">Tools</h2>
               <SkillProgressBar title="VSCode" progress={5} />
+              <SkillProgressBar title="Docker" progress={4} />
+              <SkillProgressBar title="Powershell" progress={4} />
+              <SkillProgressBar title="Git" progress={4} />
+              <SkillProgressBar title="Microsoft Teams" progress={4} />
+              <SkillProgressBar title="Ubuntu" progress={3} />
               <SkillProgressBar title="Photoshop" progress={2} />
             </div>
           </div>
