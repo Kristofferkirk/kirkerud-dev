@@ -1,45 +1,13 @@
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import githublink from "../public/github.png";
 import profilePicture from "../public/profile.jpeg";
-import React from "react";
+import SkillProgressBar from "../components/SkillProgressBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-const SkillProgress = ({
-  title,
-  progress,
-}: {
-  title: string;
-  progress: 1 | 2 | 3 | 4 | 5;
-}) => {
-  const color = progress > 3 ? "green" : "yellow";
-  return (
-    <>
-      <div className="relative pt-1">
-        <div className="flex mb-2 items-center justify-between">
-          <div>
-            <span
-              className={`text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-amber-600 bg-amber-200`}
-            >
-              {title}
-            </span>
-          </div>
-          <div className="text-right">
-            <span className="text-xs font-semibold inline-block text-amber-600">
-              {progress}
-            </span>
-          </div>
-        </div>
-        <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-amber-200">
-          <div
-            style={{ width: `${progress + 10 * 3}%` }}
-            className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-${color}-500`}
-          ></div>
-        </div>
-      </div>
-    </>
-  );
-};
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -50,6 +18,7 @@ export default function Home() {
       </Head>
 
       <h1 className={styles.title}>Kirkerud.dev</h1>
+
       <main className={styles.main}>
         <div id="intro" className={styles.section}>
           <div className={styles.grid}>
@@ -62,44 +31,53 @@ export default function Home() {
               />
 
               <p className={styles.description}>
-                My fondness of computers and everything tech related started
-                from an early age, from the moment i picked up Super Mario Bros
-                on the Gameboy i knew i wanted to work with tech.
+                Hello! My name is Kristoffer, i am a fullstack developer from
+                Gothenburg, Sweden. I love everything tech related and
               </p>
             </div>
+            <div className={styles.iconContainer}>
+              <FontAwesomeIcon
+                className={styles.regularIcon}
+                icon={faChevronDown}
+              />
+            </div>
+
+            <div className={styles.sectionContent}></div>
           </div>
         </div>
         <div id="skills" className={styles.section}>
-          <h1>Skillsets</h1>
-          <div className={styles.grid}>
-            <div className={styles.card}>
+          <div className="justify-center text-white font-bold">
+            <h1>Skillsets</h1>
+          </div>
+          <div className={styles.groupedGrid}>
+            <div className={styles.glassCard}>
               <h2>Frontend</h2>
-              <SkillProgress title="React.js" progress={4} />
-              <SkillProgress title="HTML" progress={4} />
+              <SkillProgressBar title="React.js" progress={4} />
+              <SkillProgressBar title="HTML" progress={4} />
             </div>
-            <div className={styles.card}>
+            <div className={styles.glassCard}>
               <h2>Backend</h2>
-              <SkillProgress title="C#" progress={3} />
-              <SkillProgress title="Python" progress={2} />
-              <SkillProgress title="Java" progress={2} />
+              <SkillProgressBar title="C#" progress={3} />
+              <SkillProgressBar title="Python" progress={2} />
+              <SkillProgressBar title="Java" progress={2} />
             </div>
-            <div className={styles.card}>
+            <div className={styles.glassCard}>
               <h2>Cloud</h2>
-              <SkillProgress title="Sharepoint" progress={3} />
-              <SkillProgress title="Azure" progress={3} />
-              <SkillProgress title="Google Domains" progress={3} />
+              <SkillProgressBar title="Sharepoint" progress={3} />
+              <SkillProgressBar title="Azure" progress={3} />
+              <SkillProgressBar title="Google Domains" progress={3} />
             </div>
-            <div className={styles.card}>
+            <div className={styles.glassCard}>
               <h2>Tools</h2>
-              <SkillProgress title="Docker" progress={4} />
-              <SkillProgress title="VSCode" progress={5} />
-              <SkillProgress title="Photoshop" progress={2} />
+              <SkillProgressBar title="Docker" progress={4} />
+              <SkillProgressBar title="VSCode" progress={5} />
+              <SkillProgressBar title="Photoshop" progress={2} />
             </div>
           </div>
         </div>
-        <div className={styles.section}></div>
       </main>
-      <footer className={styles.footer}>
+
+      {/*  <footer className={styles.footer}>
         <a
           target="_blank"
           rel="noreferrer"
@@ -107,7 +85,7 @@ export default function Home() {
         >
           <Image width={50} height={50} alt="github" src={githublink} />
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
