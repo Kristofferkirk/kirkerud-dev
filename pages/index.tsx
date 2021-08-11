@@ -4,10 +4,12 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import githublink from "../public/github.png";
+import linkedin from "../public/linkedin.png";
 import profilePicture from "../public/profile.jpeg";
 import SkillProgressBar from "../components/SkillProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import EmailCopyButton from "../components/EmailCopyButton";
 
 export default function Home() {
   return (
@@ -88,17 +90,55 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div id="contact" className={styles.section}>
+          <div className="justify-top text-white font-bold">
+            <h1 className={styles.georamaTitle}>Contact me</h1>
+          </div>
+          <div className={styles.glassCard}>
+            <h2 className="font-bold text-lg text-center"></h2>
+            <p className={styles.description}> Want to contact me about </p>
+            <div className="mt-10">
+              <h3 className="text-center font-bold mb-5">Email</h3>
+              <EmailCopyButton />
+            </div>
+            <div className="mt-5">
+              <h3 className="text-center font-bold mb-5">Social pages</h3>
+              <div className="flex items-end justify-center">
+                <a
+                  href="https://linkedin.com/in/kristoffer-kirkerud"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="ml-2"
+                >
+                  <Image width={40} height={40} alt="linkedin" src={linkedin} />
+                </a>
+                <a
+                  href="https://twitter.com/kriskirkerud"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="ml-2"
+                >
+                  <Image width={40} height={40} alt="linkedin" src={linkedin} />
+                </a>
+              </div>
+            </div>
+            <div className="mt-5">
+              <h3 className="text-center font-bold mb-5">
+                Repositories and portfolio
+              </h3>
+              <div className="flex items-end justify-center">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/Kristofferkirk"
+                >
+                  <Image width={40} height={40} alt="github" src={githublink} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
-
-      {/*  <footer className={styles.footer}>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/Kristofferkirk"
-        >
-          <Image width={50} height={50} alt="github" src={githublink} />
-        </a>
-      </footer> */}
     </div>
   );
 }
