@@ -33,6 +33,9 @@ a {
 * {
   box-sizing: border-box;
 }
+h3 {
+  font-family: "Cinzel", serif;
+}
 
 #intro {
   background-color: #ffdee9;
@@ -52,7 +55,8 @@ a {
 
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://images.pexels.com/photos/4831/hands-coffee-smartphone-technology.jpg?auto=compress&cs=tinysrgb&h=650&w=940);
+  background-position: center;
+  background-image: url(https://images.pexels.com/photos/4255404/pexels-photo-4255404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 }
 
 .skillProgressBar {

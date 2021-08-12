@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import githublink from "../public/github.png";
+import twitterLink from "../public/twitter.jpg";
 import linkedin from "../public/linkedin.png";
 import profilePicture from "../public/profile.jpeg";
 import SkillProgressBar from "../components/SkillProgressBar";
@@ -35,7 +36,9 @@ export default function Home() {
 
               <p className={styles.description}>
                 Hello! My name is Kristoffer, i am a fullstack developer from
-                Gothenburg, Sweden. I love everything tech related and
+                Gothenburg, Sweden. I love everything tech related and i am
+                always curious to learn more. I started my journey as a
+                developer in 2015 and been hooked ever since.
               </p>
             </div>
             <div className={styles.iconContainer}>
@@ -95,14 +98,20 @@ export default function Home() {
             <h1 className={styles.georamaTitle}>Contact me</h1>
           </div>
           <div className={styles.glassCard}>
-            <h2 className="font-bold text-lg text-center"></h2>
-            <p className={styles.description}> Want to contact me about </p>
+            <div className="text-justify">
+              <p className={styles.centerDescription}>
+                I am always open for a chat!
+              </p>
+            </div>
+
             <div className="mt-10">
-              <h3 className="text-center font-bold mb-5">Email</h3>
+              <h3 className="text-center font-bold mb-5 text-2xl">Email</h3>
               <EmailCopyButton />
             </div>
             <div className="mt-5">
-              <h3 className="text-center font-bold mb-5">Social pages</h3>
+              <h3 className="text-center font-bold mb-5 text-2xl">
+                Social pages
+              </h3>
               <div className="flex items-end justify-center">
                 <a
                   href="https://linkedin.com/in/kristoffer-kirkerud"
@@ -110,7 +119,13 @@ export default function Home() {
                   target="_blank"
                   className="ml-2"
                 >
-                  <Image width={40} height={40} alt="linkedin" src={linkedin} />
+                  <Image
+                    className="bg-white rounded-lg"
+                    width={60}
+                    height={60}
+                    alt="linkedin"
+                    src={linkedin}
+                  />
                 </a>
                 <a
                   href="https://twitter.com/kriskirkerud"
@@ -118,13 +133,19 @@ export default function Home() {
                   target="_blank"
                   className="ml-2"
                 >
-                  <Image width={40} height={40} alt="linkedin" src={linkedin} />
+                  <Image
+                    width={60}
+                    className="bg-white rounded-lg"
+                    height={60}
+                    alt="twitter"
+                    src={twitterLink}
+                  />
                 </a>
               </div>
             </div>
             <div className="mt-5">
-              <h3 className="text-center font-bold mb-5">
-                Repositories and portfolio
+              <h3 className="text-center font-bold mb-5 text-2xl ">
+                Repositories
               </h3>
               <div className="flex items-end justify-center">
                 <a
@@ -132,7 +153,7 @@ export default function Home() {
                   rel="noreferrer"
                   href="https://github.com/Kristofferkirk"
                 >
-                  <Image width={40} height={40} alt="github" src={githublink} />
+                  <Image width={60} height={60} alt="github" src={githublink} />
                 </a>
               </div>
             </div>

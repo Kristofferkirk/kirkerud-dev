@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Rock+Salt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Georama:wght@700&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
 .container {
   min-height: 100vh;
   display: flex;
@@ -72,6 +73,13 @@
   line-height: 1.5;
   font-size: 1.5rem;
   font-family: "Open Sans Condensed", sans-serif;
+}
+
+.centerDescription {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-align: center;
 }
 
 .code {

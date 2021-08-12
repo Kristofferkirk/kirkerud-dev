@@ -1,9 +1,9 @@
-﻿import { faCopy } from "@fortawesome/free-solid-svg-icons";
+﻿import { faCheckSquare, faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const EmailCopyButton = () => {
-  const defaultValue = "kristoffer@kirkerud.dqc";
+  const defaultValue = "kristoffer@kirkerud.dev";
   const [showCopyMessage, toggleCopyMessage] = React.useState(false);
   const [inputValue, setInputValue] = React.useState(defaultValue);
   return (
@@ -12,7 +12,7 @@ const EmailCopyButton = () => {
         <input
           id="email-contact"
           type="text"
-          className="p-2 center-align text-center"
+          className="p-2 center-align text-center rounded-sm"
           readOnly
           placeholder="kristoffer@kirkerud.dev"
           value={inputValue}
@@ -30,7 +30,7 @@ const EmailCopyButton = () => {
               setInputValue(defaultValue);
             }, 1000);
           }}
-          className="bg-blue-400 text-white p-2 w-10"
+          className="bg-blue-400 text-white p-2 w-10 rounded-md"
           id="email-copy"
           type="button"
         >
